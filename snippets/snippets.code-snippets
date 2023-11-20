@@ -1,0 +1,502 @@
+{
+  "WKE_React_Import_Component": {
+    "prefix": "!WKE_im_component",
+    "body": [
+      "import React, { useState, useEffect } from \"react\";",
+      "import { makeStyles } from \"@material-ui/core/styles\";",
+      "import Loading from \"../statics/Loading\";",
+      "",
+      "",
+      "const useStyles = makeStyles((theme) => ({",
+      "  example: {",
+      "    margin: 0,",
+      "  }",
+      "}));",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = (props) => {",
+      "  const {",
+      "    match,",
+      "  } = props;",
+      "  const classes = useStyles();",
+      "",
+      "  useEffect(() => {",
+      "",
+      "  }, []);",
+      "",
+      "  return (",
+      "    <>",
+      "    </>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}};"
+    ],
+    "description":"Import_Component"
+  },
+  "WKE_React_Import_Container": {
+    "prefix": "!WKE_im_container",
+    "body": [
+      "import { connect } from \"react-redux\";",
+      "import ${1:EXAMPLE} from \"../component/${1:EXAMPLE}\";",
+      "import {",
+      "} from \"./actions\";",
+      "",
+      "const mapStateToProps = (state) => ({",
+      "",
+      "});",
+      "",
+      "export default connect(mapStateToProps, {",
+      "    ",
+      "})(${1:EXAMPLE});"
+    ],
+    "description":"Import_Container"
+  },
+  "WKE_React_Import_Action_GET/SET": {
+    "prefix": "!WKE_im_action_get/set",
+    "body": [
+      "import action from \"../library/action\";",
+      "",
+      "export const GET_${1:EXAMPLE} = \"GET_${1:EXAMPLE}\";"
+      "export const get${2:EXAMPLE} = () => action(GET_${1:EXAMPLE}, {  })"
+      
+      "export const SET_${1:EXAMPLE} = \"SET_${1:EXAMPLE}\";"
+      "export const set${2:EXAMPLE} = (items, error = \"\") => action(SET_${1:EXAMPLE}, { items, error })"
+          ],
+    "description":"Import_Action_GET/SET"
+  },
+  "WKE_React_Import_Action_START/SUC/ERR": {
+    "prefix": "!WKE_im_action_start/suc/err",
+    "body": [
+      "import action from \"../library/action\";",
+      "",
+      "export const GET_${1:EXAMPLE}_START = \"GET_${1:EXAMPLE}_START\";"
+      "export const get${2:EXAMPLE}Start = () => action(GET_${1:EXAMPLE}_START);"
+      "export const GET_${1:EXAMPLE}_SUCCESS = \"GET_${1:EXAMPLE}_SUCCESS\";"
+      "export const get${2:EXAMPLE}Success = (data) =>"
+        "action(GET_${1:EXAMPLE}_SUCCESS, { data });"
+      "export const GET_${1:EXAMPLE}_ERROR = \"GET_${1:EXAMPLE}_ERROR\";"
+      "export const get${2:EXAMPLE}Error = (error) =>"
+        "action(GET_${1:EXAMPLE}_ERROR, { error });"
+     ],
+    "description":"Import_Action_START/SUC/ERR"
+  },
+  "WKE_React_GET/SET_Action": {
+    "prefix": "!WKE_get/set_action",
+    "body": [
+      "export const GET_${1:EXAMPLE} = \"GET_${1:EXAMPLE}\";"
+      "export const get${2:EXAMPLE} = () => action(GET_${1:EXAMPLE}, {  })"
+      
+      "export const SET_${1:EXAMPLE} = \"SET_${1:EXAMPLE}\";"
+      "export const set${2:EXAMPLE} = (items, error = \"\") => action(SET_${1:EXAMPLE}, { items, error })"
+          ],
+    "description":"Action_GET/SET"
+  },
+  "WKE_React_START/SUC/ERR_Action": {
+    "prefix": "!WKE_start/suc/err_action",
+    "body": [
+      "export const GET_${1:EXAMPLE}_START = \"GET_${1:EXAMPLE}_START\";"
+      "export const get${2:EXAMPLE}Start = () => action(GET_${1:EXAMPLE}_START);"
+      "export const GET_${1:EXAMPLE}_SUCCESS = \"GET_${1:EXAMPLE}_SUCCESS\";"
+      "export const get${2:EXAMPLE}Success = (data) =>"
+        "action(GET_${1:EXAMPLE}_SUCCESS, { data });"
+      "export const GET_${1:EXAMPLE}_ERROR = \"GET_${1:EXAMPLE}_ERROR\";"
+      "export const get${2:EXAMPLE}Error = (error) =>"
+        "action(GET_${1:EXAMPLE}_ERROR, { error });"
+     ],
+    "description":"Action_START/SUC/ERR"
+  },
+  "WKE_React_Import_Reducer": {
+    "prefix": "!WKE_im_reducer",
+    "body": [
+      "import {"
+      "  GET_${1:EXAMPLE},"
+      "  SET_${1:EXAMPLE}"
+      "} from \"../actions/${1:${TM_FILENAME_BASE}}\";"
+      
+      "const initialState ={"
+      "    fetching: false,"
+      "    items: [],"
+      "    error: '',"
+      "}"
+      
+      "export default (state=initialState,action)=>{"
+      "    switch (action.type) {"
+      "        case GET_${1:EXAMPLE}:"
+      "            return {"
+      "                ...state,"
+      "            }"
+      "        case SET_${1:EXAMPLE}:"
+      "            return {"
+      "                ...state,"
+      "            }"
+      "        default:"
+      "            return state;"
+      "    }"
+      "}"          
+    ],
+    "description":"Import_Reducer"
+  },
+  "WKE_React_Reducer": {
+    "prefix": "!WKE_reducer",
+    "body": [
+      "        case GET_${1:EXAMPLE}:"
+      "            return {"
+      "                ...state,"
+      "            }"
+      "        case SET_${1:EXAMPLE}:"
+      "            return {"
+      "                ...state,"
+      "            }"
+    ],
+    "description":"Reducer"
+  },
+  "WKE_React_Import_Saga": {
+    "prefix": "!WKE_im_saga",
+    "body": [
+      "import { take, call, put, select } from \"redux-saga/effects\";"
+      "import * as actions from \"../actions\";"
+      "import axiosProps from \"../library/api\";"
+      "",
+      "/}" 
+      "    take:  等待一個 action 傳入"
+      "    call:  呼叫一個 function"
+      "    put :  呼叫一個 action"
+      "    select 從 store 取出資料"
+      "*/"
+      
+      "export function* ${1:EXAMPLE}() {"
+      "  const json = yield call(axiosProps, {"
+      "    cmd: \"${2:EXAMPLE}\","
+      "  });"
+      "  const { ok, status, body } = json;"
+      "  if(ok && status === 200){"
+      "    yield put (actions.${3:EXAMPLE}())"
+      "  }else{"
+      "    yield put (actions.${3:EXAMPLE}(\"error\"))"
+      "  }"
+      "}"    
+    ],
+    "description":"Import_Saga"
+  },
+  "WKE_React_Saga": {
+    "prefix": "!WKE_saga",
+    "body": [
+      "export function* ${1:EXAMPLE}() {"
+      "  const json = yield call(axiosProps, {"
+      "    cmd: \"${2:EXAMPLE}\","
+      "  });"
+      "  const { ok, status, body } = json;"
+      "  if(ok && status === 200){"
+      "    yield put (actions.${3:EXAMPLE}())"
+      "  }else{"
+      "    yield put (actions.${3:EXAMPLE}(\"error\"))"
+      "  }"
+      "}"    
+    ],
+    "description":"Saga"
+  },
+  "WKE_relative": {
+    "prefix": ".fw-relative",
+    "body": ["fw-relative"],
+    "description": "position: relative"
+  },
+  "WKE_absolute": {
+      "prefix": ".fw-absolute",
+      "body": ["fw-absolute"],
+      "description": "position: absolute"
+  },
+  "WKE_fixed": {
+      "prefix": ".fw-fixed",
+      "body": ["fw-fixed"],
+      "description": "position: fixed"
+  },
+  "WKE_sticky": {
+      "prefix": ".fw-sticky",
+      "body": ["fw-sticky"],
+      "description": "position: sticky; z-index: 1"
+  },
+  "WKE_flex": {
+      "prefix": ".fw-flex",
+      "body": ["fw-flex"],
+      "description": "display: flex"
+  },
+  "WKE_flex-1": {
+      "prefix": ".fw-flex-1",
+      "body": ["fw-flex-1"],
+      "description": "flex: 1"
+  },
+  "WKE_a:hover": {
+      "prefix": ".fw-a",
+      "body": ["fw-a"],
+      "description": "text-decoration: none,&:hover:{text-decoration: underline; cursor: pointer}"
+  },
+  "WKE_a_no": {
+      "prefix": ".fw-a_no",
+      "body": ["fw-a_no"],
+      "description": "text-decoration: none; cursor: pointer"
+  },
+  "WKE_underline": {
+      "prefix": ".fw-underline",
+      "body": ["fw-underline"],
+      "description": "text-decoration: underline"
+  },
+  "WKE_hr": {
+      "prefix": ".fw-hr",
+      "body": ["fw-hr"],
+      "description": "border-color: #ddd"
+  },
+  "WKE_c-pointer": {
+      "prefix": ".fw-c-pointer",
+      "body": ["fw-c-pointer"],
+      "description": "cursor: pointer"
+  },
+  "WKE_c-help": {
+      "prefix": ".fw-c-help",
+      "body": ["fw-c-help"],
+      "description": "cursor: help"
+  },
+  "WKE_text-small": {
+      "prefix": ".fw-text-small",
+      "body": ["fw-text-small"],
+      "description": "font-size: 13px"
+  },
+  "WKE_ellipsis": {
+      "prefix": ".fw-ellipsis",
+      "body": ["fw-ellipsis"],
+      "description": "text-overflow: ellipsis; white-space: nowrap; overflow: hidden"
+  },
+  "WKE_nowrap": {
+      "prefix": ".fw-nowrap",
+      "body": ["fw-nowrap"],
+      "description": "white-space: nowrap"
+  },
+  "WKE_keepall": {
+      "prefix": ".fw-keepall",
+      "body": ["fw-keepall"],
+      "description": "word-break: keep-all"
+  },
+  "WKE_breakall": {
+      "prefix": ".fw-breakall",
+      "body": ["fw-breakall"],
+      "description": "word-break: break-all"
+  },
+  "WKE_vm": {
+      "prefix": ".fw-vm",
+      "body": ["fw-vm"],
+      "description": "display: flex; align-items: center; justify-content: center"
+  },
+  "WKE_flex-column": {
+    "prefix": ".fw-flex-column",
+    "body": ["fw-flex-column"],
+    "description": "display: flex; flex-direction: column"
+  },
+  "WKE_flex-jc-sb": {
+    "prefix": ".fw-flex-jc-sb",
+    "body": ["fw-flex-jc-sb"],
+    "description": "justify-content: space-between"
+  },
+  "WKE_flex-jc-sa": {
+    "prefix": ".fw-flex-jc-sa",
+    "body": ["fw-flex-jc-sa"],
+    "description": "justify-content: space-around"
+  },
+  "WKE_flex-jc-end": {
+    "prefix": ".fw-flex-jc-end",
+    "body": ["fw-flex-jc-end"],
+    "description": "justify-content: flex-end"
+  },
+  "WKE_flex-ai-center": {
+    "prefix": ".fw-flex-ai-center",
+    "body": ["fw-flex-ai-center"],
+    "description": "display: flex; align-items: center"
+  },
+  "WKE_flex-as-end": {
+    "prefix": ".fw-flex-as-end",
+    "body": ["fw-flex-as-end"],
+    "description": "align-self: flex-end"
+  },
+  "WKE_flex-ai-start": {
+    "prefix": ".fw-flex-ai-start",
+    "body": ["fw-flex-ai-start"],
+    "description": "align-items: flex-start"
+  },
+  "WKE_flex-jc-c": {
+    "prefix": ".fw-flex-jc-c",
+    "body": ["fw-flex-jc-c"],
+    "description": "display: flex; justify-content: center"
+  },
+  "WKE_totop": {
+    "prefix": ".fw-totop",
+    "body": ["fw-totop"],
+    "description": "position: fixed; right: 3%; bottom: 3%; z-index: 1"
+  },
+  "WKE_va-middle": {
+    "prefix": ".fw-va-middle",
+    "body": ["fw-va-middle"],
+    "description": "vertical-align: middle"
+  },
+  "WKE_clear": {
+    "prefix": ".fw-clear",
+    "body": ["fw-clear"],
+    "description": "clear: both"
+  },
+  "WKE_ofx-auto": {
+    "prefix": ".fw-ofx-auto",
+    "body": ["fw-ofx-auto"],
+    "description": "overflow-x: auto"
+  },
+  "WKE_ofx-v": {
+    "prefix": ".fw-ofx-v",
+    "body": ["fw-ofx-v"],
+    "description": "overflow-x: visible"
+  },
+  "WKE_ofy-auto": {
+    "prefix": ".fw-ofy-auto",
+    "body": ["fw-ofy-auto"],
+    "description": "overflow-y: auto"
+  },
+  "WKE_code": {
+    "prefix": ".fw-code",
+    "body": ["fw-code"],
+    "description": "font-family: Arial; font-style: italic; color: #f00; font-size: 30px; border: 0; padding: 2px 3px; letter-spacing: 3px; font-weight: bolder; cursor: default; width: 150px; height: 52px; line-height: 50px; text-align: center; vertical-align: middle"
+  },
+  "WKE_tooltip": {
+    "prefix": ".fw-tooltip",
+    "body": ["fw-tooltip"],
+    "description": "position: absolute; bottom: 25px; left: 0; padding: 10px; z-index: 1; width: 300px; text-align: left; border: 1px solid #ccc; background: #eee; color: #000; line-height: 18px"
+  },
+  "WKE_row-padding": {
+    "prefix": ".fw-row-padding",
+    "body": ["fw-row-padding"],
+    "description": "&>*&:not(:first-child)margin-left 4px,&>*&:not(:last-child)margin-right 4px"
+  },
+  "WKE_col-padding": {
+    "prefix": ".fw-col-padding",
+    "body": ["fw-col-padding"],
+    "description": "&>*&:not(:first-child)margin-top 4px,&>*&:not(:last-child)margin-bottom 4px"
+  },
+  "WKE_input-warning": {
+    "prefix": ".fw-input-warning",
+    "body": ["fw-input-warning"],
+    "description": "outline: 3px solid #f00"
+  },
+  "WKE_focus": {
+    "prefix": ".fw-focus",
+    "body": ["fw-focus"],
+    "description": "outline: 0"
+  },
+  "WKE_del": {
+    "prefix": ".fw-del",
+    "body": ["fw-del"],
+    "description": "text-decoration: line-through"
+  },
+  "WKE_italic": {
+    "prefix": ".fw-italic",
+    "body": ["fw-italic"],
+    "description": "font-style: italic"
+  },
+  "WKE_bold": {
+    "prefix": ".fw-bold",
+    "body": ["fw-bold"],
+    "description": "font-weight: bold"
+  },
+  "WKE_table-border-{color}": {
+    "prefix": ".fw-t-b-{COLORNAME}",
+    "body": ["fw-t-b-{COLORNAME}"],
+    "description": "& > thead
+    & > tr
+      & > th
+        F-border(1, color)
+      & > td
+        F-border(1, color, left)
+  & > tbody,
+  & > tfoot
+    & > tr
+      & > th
+        F-border(1, color)
+      & > td
+        F-border(1, color, left)"
+  },
+  "WKE_table-border-ed-{color}": {
+    "prefix": ".fw-t-b_ed-{COLORNAME}",
+    "body": ["fw-t-b_ed-{COLORNAME}"],
+    "description": " & > thead
+    & > tr
+      F-border(1, color, bottom)
+  & > tbody,
+  & > tfoot
+    & > tr
+      F-border(1, color, bottom)
+"
+  },
+  "WKE_table-border-row-{color}": {
+    "prefix": ".fw-t-b_row-{COLORNAME}",
+    "body": ["fw-t-b_row-{COLORNAME}"],
+    "description": "@extend .fw-t-b_ed-{name}
+    & > tbody,
+    & > tfoot
+      & > tr
+        & > td
+          F-border(0, '', left)
+"
+  },
+  "WKE_th-{color}": {
+    "prefix": ".fw-th-{COLORNAME}",
+    "body": ["fw-th-{COLORNAME}"],
+    "description": "@extend .fw-t
+    @extend .fw-t-b-{name}
+    @extend .fw-t-b_ed-{name}
+"
+  },
+  "WKE_table-all-{color}": {
+    "prefix": ".fw-t-all-{COLORNAME}",
+    "body": ["fw-t-all-{COLORNAME}"],
+    "description": "& > thead,
+    & > tbody,
+    & > tfoot
+      & > tr > th
+        background-color color
+"
+  },
+  "WKE_width-{width(px)}": {
+    "prefix": ".fw-w-{width(px)}",
+    "body": ["fw-w-{width(px)}"],
+    "description": "width unit(width, px)"
+  },
+  "WKE_max-width-{width(px)}": {
+    "prefix": ".fw-mw-{width(px)}",
+    "body": ["fw-mw-{width(px)}"],
+    "description": "max-width unit(width, px)
+    td.addRow
+      position relative
+      & > button
+        position relative
+        top 0
+        left 0"
+  },
+  "WKE_writing-mode-{direction}": {
+    "prefix": ".fw-writing-mode-{DIRECTION}",
+    "body": ["fw-writing-mode-{DIRECTION}"],
+    "description": " height fit-content
+    & > span
+      writing-mode $direction"
+  },
+  "WKE_padding-left-{padding(px)}": {
+    "prefix": ".fw-pdleft-{PADDING(PX)}",
+    "body": ["fw-pdleft-{PADDING(PX)}"],
+    "description": " padding-left unit(pd, px) !important"
+  },
+  "WKE_margin-bottom-{margin(px)}": {
+    "prefix": ".fw-mgbot-{MARGIN(PX)}",
+    "body": ["fw-mgbot-{MARGIN(PX)}"],
+    "description": "margin-bottom unit(pd, px) !important"
+  },
+  "WKE_margin-bottom-{margin(px)}": {
+    "prefix": ".fw-mgleft-{MARGIN(PX)}",
+    "body": ["fw-mgleft-{MARGIN(PX)}"],
+    "description": "margin-left unit(pd, px) !important"
+  }
+
+}
+
+
