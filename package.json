@@ -3,7 +3,7 @@
   "name": "wke-lab-reactsnippets",
   "displayName": "WKE Lab ReactSnippets",
   "description": "這是一個針對WKE Lab實驗室所設計的React Snippets功能。內容含括了實驗室當中經常使用的Component以及Container組件，以及Reudux中需要經常使用到的Action、Reducer、和Saga組件。同時也加入了實驗室所設計並定義CSS樣式，請務必在資料夾中載入樣式檔。This is a React Snippets feature designed for WKE Lab. It includes commonly used components and containers within the laboratory, as well as essential Redux components such as Action, Reducer, and Saga. It also integrates CSS styles specifically defined for the lab, so make sure to load the style files into the folder.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.84.0"
@@ -17,10 +17,6 @@
   ],
   "contributes": {
     "snippets": [
-      {
-        "language": "html",
-        "path": "./snippets/snippets.code-snippets"
-      },
       {
         "language": "javascript",
         "path": "./snippets/snippets.code-snippets"

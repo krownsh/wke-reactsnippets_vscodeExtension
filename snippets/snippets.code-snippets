@@ -80,8 +80,8 @@
      ],
     "description":"Import_Action_START/SUC/ERR"
   },
-  "WKE_React_GET/SET_Action": {
-    "prefix": "!WKE_get/set_action",
+  "WKE_React_Action_GET/SET": {
+    "prefix": "!WKE_action_get/set",
     "body": [
       "export const GET_${1:EXAMPLE} = \"GET_${1:EXAMPLE}\";"
       "export const get${2:EXAMPLE} = () => action(GET_${1:EXAMPLE}, {  })"
@@ -91,8 +91,8 @@
           ],
     "description":"Action_GET/SET"
   },
-  "WKE_React_START/SUC/ERR_Action": {
-    "prefix": "!WKE_start/suc/err_action",
+  "WKE_React_Action_START/SUC/ERR": {
+    "prefix": "!WKE_action_start/suc/err",
     "body": [
       "export const GET_${1:EXAMPLE}_START = \"GET_${1:EXAMPLE}_START\";"
       "export const get${2:EXAMPLE}Start = () => action(GET_${1:EXAMPLE}_START);"
@@ -105,8 +105,16 @@
      ],
     "description":"Action_START/SUC/ERR"
   },
-  "WKE_React_Import_Reducer": {
-    "prefix": "!WKE_im_reducer",
+  "WKE_React_Action_Onchange": {
+    "prefix": "!WKE_action_onchange",
+    "body": [
+      "export const ONCHANGE_${1:EXAMPLE} = \"ONCHANGE_${1:EXAMPLE}\";"
+      "export const onchange${2:EXAMPLE} = () => action(ONCHANGE_${1:EXAMPLE}, {  })"
+      ],
+    "description":"Action_Onchange"
+  },
+  "WKE_React_Import_Reducer_GET/SET": {
+    "prefix": "!WKE_im_reducer_get/set",
     "body": [
       "import {"
       "  GET_${1:EXAMPLE},"
@@ -134,10 +142,46 @@
       "    }"
       "}"          
     ],
-    "description":"Import_Reducer"
+    "description":"Import_Reducer_GET/SET"
   },
-  "WKE_React_Reducer": {
-    "prefix": "!WKE_reducer",
+  "WKE_React_Import_Reducer_START/SUC/ERR": {
+    "prefix": "!WKE_im_reducer_start/suc/err",
+    "body": [
+      "import {"
+      "  START_${1:EXAMPLE},"
+      "  SUCCESS_${1:EXAMPLE}"
+      "  ERROR_${1:EXAMPLE}"
+      "} from \"../actions/${1:${TM_FILENAME_BASE}}\";"
+      
+      "const initialState ={"
+      "    fetching: false,"
+      "    items: [],"
+      "    error: '',"
+      "}"
+      
+      "export default (state=initialState,action)=>{"
+      "    switch (action.type) {"
+      "        case START_${1:EXAMPLE}:"
+      "            return {"
+      "                ...state,"
+      "            }"
+      "        case SUCCESS_${1:EXAMPLE}:"
+      "            return {"
+      "                ...state,"
+      "            }"
+      "        case ERROR_${1:EXAMPLE}:"
+      "            return {"
+      "                ...state,"
+      "            }"
+      "        default:"
+      "            return state;"
+      "    }"
+      "}"          
+    ],
+    "description":"Import_Reducer_START/SUC/ERR"
+  },
+  "WKE_React_Reducer_GET/SET": {
+    "prefix": "!WKE_reducer_get/set",
     "body": [
       "        case GET_${1:EXAMPLE}:"
       "            return {"
@@ -148,7 +192,24 @@
       "                ...state,"
       "            }"
     ],
-    "description":"Reducer"
+    "description":"Reducer_GET/SET"
+  },
+  "WKE_React_Reducer_START/SUC/ERR": {
+    "prefix": "!WKE_reducer_start/suc/err",
+    "body": [
+      "        case START_${1:EXAMPLE}:"
+      "            return {"
+      "                ...state,"
+      "            }"
+      "        case SUCCESS_${1:EXAMPLE}:"
+      "            return {"
+      "                ...state,"
+      "            }"
+      "        case ERROR_${1:EXAMPLE}:"
+      "            return {"
+      "                ...state,"
+      "            }"    ],
+    "description":"Reducer_START/SUC/ERR"
   },
   "WKE_React_Import_Saga": {
     "prefix": "!WKE_im_saga",
